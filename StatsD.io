@@ -18,14 +18,14 @@ StatsD time := method(key, time, rate,
 
 # Record a count
 StatsD count := method(key, amount, rate,
-	send("#{key}:#{amount}|c" interpolate, rate)
+  send("#{key}:#{amount}|c" interpolate, rate)
 )
 
 # Send value to StatsD, adding the optional
 # prefix and rate
 StatsD send := method(value, rate,
-	if(self prefix isNil not, value = "#{self prefix}#{value}" interpolate)
-	if(rate isNil not, value = "#{value}|@#{rate}" interpolate)
+  if(self prefix isNil not, value = "#{self prefix}#{value}" interpolate)
+  if(rate isNil not, value = "#{value}|@#{rate}" interpolate)
   address := IPAddress clone setIp(ip) setPort(port)
   Socket asyncUdpWrite(address, value, 0, value size)
   self
