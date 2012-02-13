@@ -27,9 +27,9 @@ Very useful to time actions, like:
 
 ``` io
 stats time(
-	Date cpuSecondsToRun(
-		# do something
-	) * 1000
+  Date cpuSecondsToRun(
+    # do something
+  ) * 1000
 )
 ```
 
