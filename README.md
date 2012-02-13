@@ -33,6 +33,10 @@ stats time(
 )
 ```
 
+## Running the tests
+
+To run the tests, check out a copy of the repository, and then run `make`.
+
 ## Author
 
 John Crepezzi (john.crepezzi@gmail.com)
