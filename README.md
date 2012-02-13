@@ -18,6 +18,9 @@ And then you can hit up the `#time` or `#count` methods:
 ``` io
 stats count("thing", 20)
 stats time("otherthing", 20)
+
+stats increment("thing") # count 1
+stats decrement("thing") # count -1
 ```
 
 Very useful to time actions, like:

@@ -21,6 +21,16 @@ StatsD count := method(key, amount, rate,
   send("#{key}:#{amount}|c" interpolate, rate)
 )
 
+# Increment a count
+StatsD increment := method(key, rate,
+  send("#{key}:1|c" interpolate, rate)
+)
+
+# Decrement a count
+StatsD decrement := method(key, rate,
+  send("#{key}:-1|c" interpolate, rate)
+)
+
 # Send value to StatsD, adding the optional
 # prefix and rate
 StatsD send := method(value, rate,
